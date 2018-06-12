@@ -180,7 +180,32 @@
     <p class="setup-similar-label">Петр Петров</p>
   </div>
 </template>
+<script type="text/javascript">
+  var fireballSize = 22;
+  var wizardSpeed = 3;
+  var wizardWidth = 70;
+  //назначение: меняет скорость полета, значение true or false
+  var getFireballSpeed = function(left){
+    return left ? 5 : 2;
+  }
+// назначение: расчитывает высоту мага, работает и без параметра :)
+var getWizardHeight = function() {
+  var calcWizardHeight = (1.337 * wizardWidth);
+  return calcWizardHeight;
+}
+//var wizardHeight = getWizardHeight(wizardWidth);
 
+// назначение: передвигает мага по горизонтали, параметр ширина игровой области,
+  // но как он сюда попадает это?
+   function getWizardX(width){
+      return width/2;
+}
+// назначение: передвигает мага по вертикали, параметр высота игровой области,
+  // но как он сюда попадает это?
+   function getWizardY(height){
+      return height/3;
+}
+</script>
 <script src="js/stat.js"></script>
 <script src="js/game.js"></script>
 
