@@ -39,11 +39,12 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.fillText('Список результатов:', CLOUD_X + 2 * FONT_GAP, CLOUD_Y + 3 * FONT_GAP);
 
   for (var i = 0; i < players.length; i++) {
-    if (players[i] == 'Вы'){
+    players[i] == 'Вы' ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'green';
+    /*if (players[i] == 'Вы'){
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
       ctx.fillStyle = 'green';
-    }
+    }*/
     ctx.fillRect(CLOUD_X + GAP + (BAR_WIDTH + GAP) * i, CLOUD_HEIGHT - 2 * FONT_GAP - TEXT_HEIGHT, BAR_WIDTH, -1 * (BAR_HEIGHT * times[i]) / maxTime);
     ctx.fillStyle = '#000';
     ctx.fillText(players[i], CLOUD_X + GAP + (BAR_WIDTH + GAP) * i, CLOUD_HEIGHT - FONT_GAP - TEXT_HEIGHT);
