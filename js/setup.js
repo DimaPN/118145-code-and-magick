@@ -1,3 +1,5 @@
+'use strict';
+
 var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var COLOR_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
@@ -7,7 +9,7 @@ var COAT_COLOR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)
 var rand = function (arr) {
   var x = Math.floor(Math.random() * arr.length);
 
-  return arr[x]
+  return arr[x];
 };
 var createPlayers = function (count) {
   var players = [];
@@ -16,10 +18,9 @@ var createPlayers = function (count) {
       name: rand(WIZARD_NAMES) + ' ' + rand(WIZARD_SURNAMES),
       coatColor: rand(COAT_COLOR),
       colorEyes: rand(COLOR_EYES),
-    }
+    };
   }
-  ;
-  return players
+  return players;
 };
 
 var wizards = createPlayers(3);
@@ -40,7 +41,7 @@ var renderWizard = function (wizard) {
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.colorEyes;
 
   return wizardElement;
-}
+};
 
 var fragment = document.createDocumentFragment();
 for (var i = 0; i < wizards.length; i++) {
