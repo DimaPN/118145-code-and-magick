@@ -5,10 +5,9 @@ var COAT_COLOR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)
 
 
 var rand = function (arr) {
-  var max = arr.length - 1;
-  var x = Math.floor(Math.random() * 10);
-  var num = x > max ? max : x;
-  return arr[num]
+  var x = Math.floor(Math.random() * arr.length);
+
+  return arr[x]
 };
 var createPlayers = function (count) {
   var players = [];
