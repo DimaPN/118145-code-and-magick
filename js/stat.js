@@ -40,8 +40,9 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.fillText('Список результатов:', CLOUD_X + 2 * FONT_GAP, CLOUD_Y + 3 * FONT_GAP);
 
   for (var i = 0; i < players.length; i++) {
-    players[i] === 'Вы' ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'green';
-    /* if (players[i] == 'Вы'){
+    ctx.fillStyle = players[i] === 'Вы' ? 'rgba(255, 0, 0, 1)' : 'green';
+    /* players[i] === 'Вы' ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'green';
+     if (players[i] == 'Вы'){
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
       ctx.fillStyle = 'green';
